@@ -35,7 +35,7 @@ if(empty($_POST['submit'])){
 	echo "</form>";
 }
 else{
-	echo "$username1";
+	echo "<div id='greeting' clas='col-xs-12 col-md-12  col-sm-12'>".$username1." "."Избери Операция:</span>";
 	echo '<div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php">Свободни Места</a></li>
   <li><a href="busy.php">Заети Места</a></li>
