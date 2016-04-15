@@ -18,12 +18,14 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
 
 </head>
 <body>
-<header>
-
-
-
-
-
-
-
-</header>
+	<header id="header">
+            <div id="menu" class="header-menu fixed">
+                <div class="box">
+                        <nav role="navigation" class="col-sm-12">
+                            <div class="navbar-header">
+                            	<h1>Синя зона инфо</h1>
+                            </div>
+                        </nav>
+                </div>
+            </div>
+    </header>
