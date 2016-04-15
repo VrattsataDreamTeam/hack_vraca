@@ -7,9 +7,9 @@ if(!empty($_GET)) {
 	$id_photo= $_GET['id'];
 } 
 
-echo '<pre>';
-print_r($_FILES);
-echo '</pre>';
+//echo '<pre>';
+//print_r($_FILES);
+//echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="en">

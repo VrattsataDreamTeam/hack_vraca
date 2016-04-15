@@ -24,8 +24,8 @@ echo '<tr>';
 	if (mysqli_num_rows($read_result) > 0) {
 		while($row = mysqli_fetch_assoc($read_result)){ 
 		echo '<tr>';
-		echo '<td>'.$row['worker_id'].'</td>';
-		echo '<td>'.$row['zone_id'].'</td>';
+		echo '<td>'.$row['worker_name'].'</td>';
+		echo '<td>'.$row['zone_address'].'</td>';
 		echo '<td><img src="data:image/jpeg;base64,'.base64_encode( $row['photo'] ).'"/></td>';
 		echo '<td>'.$row['date'].'</td>';
 		
