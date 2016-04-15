@@ -10,8 +10,8 @@ if(empty($_POST['submit'])){
 	$q 		= "SELECT * FROM zones WHERE date_deleted IS NULL";
 	$res 	= mysqli_query($conn, $q);
 	
-	echo "<p>Select zone</p>";
-	echo "<form action='create.php' method='post'>";
+	echo "<p>Избери Зона:</p>";
+	echo "<form action='update.php' method='post'>";
 	echo "<select name='zone_id'>";
 	
 	if (mysqli_num_rows($res) > 0) {
@@ -23,33 +23,20 @@ if(empty($_POST['submit'])){
 	}
 	echo "</select>";
 
-	$q 		= "SELECT * FROM workers WHERE date_deleted IS NULL";
-	$res 	= mysqli_query($conn, $q);
 	
-	echo "<p>Select worker</p>";
-	echo "<form action='create.php' method='post'>";
-	echo "<select name='worker_id'>";
 	
-	if (mysqli_num_rows($res) > 0) {
-		while($row = mysqli_fetch_assoc($res)){ 
-			echo '<option value="'.$row['worker_id'].'"';
-			if($row['worker_name']==='--'){echo 'selected =--';}
-			echo '>'.$row['worker_name'].'</option>';
-		}
-	}
-	echo "</select>";
 
-	echo "<p><input type='submit' name='submit' value='insert'></p>";
+	echo "<p><input type='submit' name='submit' value='продължи'></p>";
 	echo "</form>";
 }
 else{
 	
 	
 	$id_zone 			= $_POST['zone_id'];
-	$id_worker          =$_POST['worker_id'];
 	
-	$insert_query = 	"INSERT INTO photos(zone_id, worker_id) 
-						VALUES ('$id_zone', '$id_worker')";
+	
+	$insert_query = 	"INSERT INTO photos(zone_id) 
+						VALUES ('$id_zone')";
 			
 	$insert_result= mysqli_query($conn, $insert_query);
 	if ($insert_result) {

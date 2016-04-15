@@ -41,7 +41,8 @@ $a = 0;
 
         $a = 1;
          
-        echo "<h2><a href='autoparts.php'>Добре дошъл!</a></h2>";
+        echo "<div class='col-md-offset-1'><h2>Добре дошъл $username1!</a></h2></div>";
+        echo "<a class='btn btn-default col-md-offset-6 col-xs-offset-4 col-sm-offset-4'  href='CRUD_photo/create.php' role='button'>Продължи</а>";
        
       }
     } 
