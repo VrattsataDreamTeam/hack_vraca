@@ -1,5 +1,5 @@
 <?php 
-require('db_conn.php');
+$conn = mysqli_connect('localhost', 'root', '', 'zones');
 
 	$read_busy_place = "SELECT * FROM `places` 
 							LEFT JOIN `zones`
