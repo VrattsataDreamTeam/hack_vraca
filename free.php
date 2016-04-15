@@ -1,12 +1,16 @@
 <?php 
+session_start();
+include_once('functions/header.php');
+$zone_id=$_POST['zone_id'];
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
-
+echo $zone_id;
 	$read_busy_place = "SELECT * FROM `places` 
 							LEFT JOIN `zones`
 								ON `places`.`zone_id`=`zones`.`zone_id` 
 							LEFT JOIN `statuses` 
 								ON `places`.`status_id`=`statuses`.`status_id` 
 						WHERE `places`.`date_deleted` IS NULL AND `places`.`status_id`=1
+						AND `places`.`zone_id`= $zone_id
 						ORDER BY `places`.`place_id`";
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
 

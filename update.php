@@ -1,4 +1,5 @@
 <?php 
+include_once('functions/header.php');
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
 
 if (isset($_GET['id'])) {
@@ -49,6 +50,7 @@ if (isset($_GET['id'])) {
 			$update_place_result= mysqli_query($conn, $update_place);
 				if ($update_place_result) {
 					echo "<h3>$place_id е заето!</h3>";
+					echo "<a href='create.php'>айде</a>";
 				}
 				else{
 					echo "<h3>Възникна проблем!</h3>";

@@ -1,4 +1,5 @@
 <?php 
+include_once('functions/header.php');
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
 
 	$read_busy_place = "SELECT * FROM `places` 
