@@ -1,61 +1,57 @@
-<?php
-
+<?php 
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
-// if (!$conn) {
-//  	die("Connection failed: " .mysqli_connect_error());
-//  	} else {
-//  	echo "Connected successfully !";
-//  	}
-if(empty($_POST['submit'])){
-	$id_photo = $_GET['id'];
-//FIRST QUERY
-	$q 		= "SELECT * FROM photos 
-			LEFT JOIN zones ON photos.zone_id=zones.zone_id LEFT JOIN workers ON photos.worker_id=workers.worker_id 
-			WHERE photos.photo_id=$id_photo";
-			
-	$res = mysqli_query($conn, $q);
-	$row = mysqli_fetch_assoc($res);
 
+if (isset($_GET['id'])) {
 	
-	echo "<form action='update.php' method='post'>";
-	echo "<input type='hidden' name='photo_id' value=".$row['photo_id'].">";
-	
-	echo "<p>Change the zone</p>";
-	echo "<select name='zone_id'>";
-	
-	$q_zones 		= "SELECT * FROM zones WHERE date_deleted IS NULL";
-	$res_zones 	= mysqli_query($conn, $q_zones);
-	if (mysqli_num_rows($res_zones) > 0) {
-		while($row_zones = mysqli_fetch_assoc($res_zones)){ 			
-			echo '<option value="'.$row_zones['zone_id'].'"';
-			if($row_zones['zone_id']===$row_zones['zone_id']){echo 'selected='.$row_zones['zone_id']."'";}
-			echo '>'.$row_zones['zone_address'].'</option>';
-		}
-	}
-	echo "</select>";
+		$place_id = $_GET['id'];	
 
 
+	$read_busy_place = "SELECT * FROM `places` 
+							LEFT JOIN `zones`
+								ON `places`.`zone_id`=`zones`.`zone_id` 
+							LEFT JOIN `statuses` 
+								ON `places`.`status_id`=`statuses`.`status_id` 
+						WHERE `places`.`place_id`=$place_id";
+	$busy_place_result = mysqli_query($conn, $read_busy_place);
+	$row = mysqli_fetch_assoc($busy_place_result);
+?>
+	<form action="update.php" method="post">
 
-	echo "<p><input type='submit' name='submit' value='Промени'></p>";
-	echo "</form>";
-}else {
-	
-	$id_photo			= $_POST['photo_id'];
-	$id_zone 			= $_POST['zone_id'];
-	$id_worker 			= $_POST['worker_id'];
-	
-	$update_query = "UPDATE photos 
-					SET zone_id = $id_zone,
-					worker_id = $id_worker			
-					WHERE photo_id = $id_photo";
-					
-	$update_result= mysqli_query($conn, $update_query);
-	if ($update_result) {
- 				
-		echo "Успешно променихте запис в базата данни!";
-		echo "<p><a href='read.php'>Read DB</a></p>";
-	}else{
-		echo "Неуспешна промяна на запис в базата данни! Моля опитайте по-късно!";
-		echo "<p><a href='#'>link to somewhere ... </a></p>";
-	}
+		<input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
+		<?php echo $row['place_id'];  ?>
+		<select name="status_id">				
+<?php	
+		$read_status = "SELECT * FROM `statuses` 
+							WHERE `date_deleted` IS NULL";
+		$read_status_result = mysqli_query($conn, $read_status);
+			if (mysqli_num_rows($read_status_result) > 0) {
+				while($row = mysqli_fetch_assoc($read_status_result)){
+?>
+			<option value="<?php echo $row['status_id']?>" ><?php echo $row['status_name']?> </option>
+<?php
+				}
+			}
+	?>
+</select>
+<input type="submit" name="submit" value="Заето">
+</form>
+
+<?php
 }
+	if(isset($_POST['submit'])){
+		$place_id = $_POST['place_id'];
+		$status_id = $_POST['status_id'];
+				
+			$update_place = "UPDATE `places` 
+								SET `status_id`=$status_id 
+							WHERE `place_id`=$place_id";
+					
+			$update_place_result= mysqli_query($conn, $update_place);
+				if ($update_place_result) {
+					echo "<h3>$place_id е заето!</h3>";
+				}
+				else{
+					echo "<h3>Възникна проблем!</h3>";
+				}
+	}
+?>
