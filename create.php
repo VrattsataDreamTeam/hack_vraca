@@ -1,8 +1,9 @@
 <?php 
 include_once('functions/header.php');
+session_start();
 ?>
 <?php
-
+$username1=$_SESSION['username'];
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
 // if (!$conn) {
 // 	die("Connection failed: " .mysqli_connect_error());
@@ -34,6 +35,7 @@ if(empty($_POST['submit'])){
 	echo "</form>";
 }
 else{
+	echo "$username1";
 	echo '<div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php">Свободни Места</a></li>
   <li><a href="busy.php">Заети Места</a></li>

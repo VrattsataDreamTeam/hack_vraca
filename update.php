@@ -34,19 +34,7 @@ if(empty($_POST['submit'])){
 	}
 	echo "</select>";
 
-echo "<p>Change the worker</p>";
-	echo "<select name='worker_id'>";
-	
-	$q_workers 		= "SELECT * FROM workers WHERE date_deleted IS NULL";
-	$res_workers 	= mysqli_query($conn, $q_workers);
-	if (mysqli_num_rows($res_workers) > 0) {
-		while($row_workers = mysqli_fetch_assoc($res_workers)){ 			
-			echo '<option value="'.$row_workers['worker_id'].'"';
-			if($row_workers['worker_id']===$row_workers['worker_id']){echo 'selected='.$row_workers['worker_id']."'";}
-			echo '>'.$row_workers['worker_name'].'</option>';
-		}
-	}
-	echo "</select>";
+
 
 	echo "<p><input type='submit' name='submit' value='Промени'></p>";
 	echo "</form>";
