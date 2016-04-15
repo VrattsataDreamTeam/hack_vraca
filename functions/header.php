@@ -25,13 +25,14 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
                 <div class="container-fluid">
                         <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5">
                             <div class="navbar-header">
-                            	<h1>Синя зона инфо</h1>
-                              <div class="navbar-collapse collapse">
+                            	<h1 class="bg-info">Синя зона инфо</h1>
+                              <div class="nav-tabs">
 
                                 <!--== Navigation Menu ==-->
-                                <ul class="nav navbar-nav">
-                                    <li class="current"><a href="map.php">Карта</a></li>
-                                </ul>
+                                
+                                    <a href="functions/map.php"><span class='glyphicon glyphicon-map-marker'><p>карта</p></span></a></li>
+                                    
+                                
                             </div>   
                             </div>
                            

@@ -3,4 +3,11 @@ border: 0px solid;
 }
 h1{
 	text-align: center;
+
+}
+.nav-tabs{
+text-align: center;
+}
+#map{
+	text-align: center;
 }
