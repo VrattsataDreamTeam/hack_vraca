@@ -1,3 +1,7 @@
+body,html,div{
+	margin: 0;
+	pading:0;
+}
 header,div,nav{
 border: 0px solid;
 }
@@ -64,3 +68,9 @@ a:hover {
   div{
   	border:;
   }
+  .glyphicon {
+    font-size: 20px;
+}
+.glyphicon.map-marker {
+    font-size: 50px;
+}
