@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Project</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive_style.css">
 		<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -20,8 +22,8 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
 <body>
 	<header id="header">
             <div id="menu" class="header-menu fixed">
-                <div class="box">
-                        <nav role="navigation" class="col-sm-12">
+                <div class="container-fluid">
+                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5">
                             <div class="navbar-header">
                             	<h1>Синя зона инфо</h1>
                             </div>
