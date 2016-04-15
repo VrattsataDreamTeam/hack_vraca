@@ -1,5 +1,6 @@
 
 <?php
+include_once('functions/header.php');
 include_once('functions/functions.php');
 ?>
 
