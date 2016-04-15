@@ -7,7 +7,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 // 	echo "Connected successfully !";
 // 	}
 $read_query 	="SELECT * FROM photos JOIN zones
-			 	ON photos.zone_id=zones.zode_id JOIN workers ON photos.worker_id=workers.worker_id
+			 	ON photos.zone_id=zones.zone_id JOIN workers ON photos.worker_id=workers.worker_id
 			 	WHERE photos.date_deleted IS NULL ";
 $read_result = mysqli_query($conn, $read_query);
 

@@ -50,9 +50,9 @@ echo '</pre>';
 									`type_photo`='$file_type',
 									`size_photo`='$file_size',
 									`date`='$today'
-								WHERE `id_photo` = $id_photo";
+								WHERE `photo_id` = $id_photo";
 								if (mysqli_query($conn, $q)) {
-									echo "<p>Успешно записахте снимка на частта</p>";
+									echo "<p>Успешно записахте снимка</p>";
 									$q = "SELECT `photo` FROM `photos` WHERE photo_id = $id_photo";
 									$result = mysqli_query($conn, $q);
 									$row = mysqli_fetch_assoc($result);

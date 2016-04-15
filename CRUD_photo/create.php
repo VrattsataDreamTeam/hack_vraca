@@ -6,8 +6,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 // 	echo "Connected successfully !";
 // 	}
 if(empty($_POST['submit'])){
-//IN ADVANCE SELECT FROM DB 
-	//CITIES FOR INPUT TYPE SELECT
+
 	$q 		= "SELECT * FROM zones WHERE date_deleted IS NULL";
 	$res 	= mysqli_query($conn, $q);
 	
