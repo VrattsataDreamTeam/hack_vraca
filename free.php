@@ -1,8 +1,10 @@
 <?php 
 session_start();
 include_once('functions/header.php');
-$zone_id=$_POST['zone_id'];
+
+$zone_id=$_SESSION['zone_id'];
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
+$username1=$_SESSION['username'];
 echo $zone_id;
 	$read_busy_place = "SELECT * FROM `places` 
 							LEFT JOIN `zones`
@@ -13,6 +15,14 @@ echo $zone_id;
 						AND `places`.`zone_id`= $zone_id
 						ORDER BY `places`.`place_id`";
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
+
+echo "<div id='greeting' clas='col-xs-12 col-md-12  col-sm-12'>".$username1." "."Избери Операция:</span>";
+	echo '<div id="worker_menu"><ol class="breadcrumb">
+  <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
+  <li><a href="busy.php">Заети Места</a></li>
+  <li><a href="img.php">Снимки</a></li>
+</ol></div>';
+
 
 echo "<table border='1'>";
 echo "<tr>
@@ -30,6 +40,7 @@ echo "<tr>
 		}
 
 	}
-
+$_SESSION['username']=$username1;
+$_SESSION['zone_id']=$zone_id;
 echo "</table>";
 ?>
