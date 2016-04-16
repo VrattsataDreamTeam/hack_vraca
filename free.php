@@ -31,7 +31,7 @@ $insert_result= mysqli_query($conn,$insert_query);
 						ORDER BY `places`.`place_id`";
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
 
-echo "<div id='greeting' clas='col-xs-12 col-md-12 col-sm-12'>".$username1." "."Избери Операция:</span>";
+echo "<div id='greeting' clas='col-xs-12 col-md-12 col-sm-12'>".$username1." ".", избери операция:</span>";
 	echo '<p><div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
   <li><a href="busy.php">Заети Места</a></li>

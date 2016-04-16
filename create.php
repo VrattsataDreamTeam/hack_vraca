@@ -17,11 +17,11 @@ if(empty($_POST['submit'])){
 	$res 	= mysqli_query($conn, $q);
 	echo '<div id="menu2" class="header-menu fixed">
                 <div class="container-fluid">
-                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-4 col-md-0">
+                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-4 col-md-4">
                             <div class="navbar-header">
                               
                               <div class="nav-tabs">';
-	echo "<p>$username1 Избери Зона:</p>";
+	echo "<p>$username1 , избери зона:</p>";
 	echo "<div id='option_address'>";
 	echo "<form action='free.php' method='get'>";
 	
