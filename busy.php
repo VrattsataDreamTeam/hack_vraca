@@ -16,14 +16,14 @@ $username1=$_SESSION['username'];
 						AND `places`.`zone_id`= $zone_id
 						ORDER BY `places`.`place_id`";
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
-echo "<div id='greeting' clas='col-xs-12 col-md-12  col-sm-12'>".$username1." "."Избери Операция:</span>";
+echo "<div id='greeting' class='col-xs-12 col-md-12  col-sm-12'>".$username1." "."Избери Операция:</span>";
 	echo '<p><div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
   <li><a href="busy.php">Заети Места</a></li>
   <li><a href="img.php">Снимки</a></li>
-</ol></div></p>';
-
-echo "<table border='1'>";
+</ol></p></div>';
+echo "<p><div class='table-responsive'>";
+echo "<table border='0' class='table table-hover'>";
 echo "<tr>
 	  	<td>Зона</td>
 	  	<td>Място</td>
@@ -48,5 +48,5 @@ echo "<tr>
 
 	}
 
-echo "</table>";
+echo "</table></p></div></div>";
 ?>
