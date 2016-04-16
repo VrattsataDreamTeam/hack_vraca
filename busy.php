@@ -17,25 +17,33 @@ $username1=$_SESSION['username'];
 						ORDER BY `places`.`place_id`";
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
 echo "<div id='greeting' clas='col-xs-12 col-md-12  col-sm-12'>".$username1." "."Избери Операция:</span>";
-	echo '<div id="worker_menu"><ol class="breadcrumb">
+	echo '<p><div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
   <li><a href="busy.php">Заети Места</a></li>
   <li><a href="img.php">Снимки</a></li>
-</ol></div>';
+</ol></div></p>';
 
 echo "<table border='1'>";
 echo "<tr>
 	  	<td>Зона</td>
 	  	<td>Място</td>
 	  	<td>Заето</td>
+	  	<td>Начало</td>
+	  	<td>Край</td>
+	  	<td>Цена</td>
 	  	<td>Освобождаване</td>
+	  	<td>Талон</td>
 	  </tr>";
 	if (mysqli_num_rows($busy_place_result) > 0) {
 		while($row = mysqli_fetch_assoc($busy_place_result)){
 		echo '<tr><td>'.$row['zone_address'].'</td>';
 		echo '<td>'.$row['place_id'].'</td>';
 		echo '<td>'.$row['status_name'].'</td>';
-		echo '<td>'.'<a href="update.php?id='.$row['place_id'].'">Освободи</a>'.'</td></tr>';
+		echo '<td>'.$row['time_start'].'</td>';
+		echo '<td>'.$row['time_end'].'</td>';
+		echo '<td>'.$row['price'].'</td>';
+		echo '<td>'.'<a href="busy_to_free.php?id='.$row['place_id'].'">Освободи</a>'.'</td>';
+		echo '<td>'.'<a href="talon.php?id='.$row['place_id'].'">Талон</a>'.'</td></tr>';
 		}
 
 	}

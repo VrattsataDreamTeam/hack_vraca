@@ -14,13 +14,18 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 //  }
 
 if(empty($_POST['username1']) && empty($_POST['password1']) || empty($_POST['submit'])){
-
+echo '<div id="menu" class="header-menu fixed">
+                <div class="container-fluid">
+                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-12">
+                            <div class="navbar-header">
+                              
+                              <div class="nav-tabs">'; 
 echo "<span id='form'><form action='login.php' method='post'>";
 
 input_type('<p>','</p>','usr', 'text', 'username1', '', 'Потребителско име* ');
 input_type('<p>','</p>','ps', 'password', 'password1', '', 'Парола* ');
 input_type('<p>','</p>','sub', 'submit', 'submit', 'Вход', '');
-echo "</span></form>";
+echo "</span></form></div></div></div></div>";
 
 }else{
   $username1 = $_POST['username1'];
@@ -42,9 +47,9 @@ $a = 0;
 
         $a = 1;
         $_SESSION['worker_id']=$row['worker_id'];
-        echo "<div class='col-md-offset-1'><h2>Добре дошъл $username1!</a></h2></div>";
+        echo "<div class='col-md-offset-0'><h2>Добре дошъл $username1!</a></h2></div>";
         
-        echo "<a class='btn btn-default col-md-offset-6 col-xs-offset-4 col-sm-offset-4'  href='create.php' role='button'>Продължи</а>";
+        echo "<a class='btn btn-default col-md-4 col-md-offset-4 col-xs-offset-4 col-sm-offset-4'  href='create.php' role='button'>Продължи</а>";
        $_SESSION['username']=$username1;
       }
     } 

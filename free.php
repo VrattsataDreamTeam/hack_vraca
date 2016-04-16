@@ -3,6 +3,9 @@ session_start();
 include_once('functions/header.php');
 
 $zone_id=$_GET['zone_id'];
+
+
+
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
 mysqli_set_charset($conn, 'utf8');
 $username1=$_SESSION['username'];
@@ -28,15 +31,15 @@ $insert_result= mysqli_query($conn,$insert_query);
 						ORDER BY `places`.`place_id`";
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
 
-echo "<div id='greeting' clas='col-xs-12 col-md-12  col-sm-12'>".$username1." "."Избери Операция:</span>";
-	echo '<div id="worker_menu"><ol class="breadcrumb">
+echo "<div id='greeting' clas='col-xs-12 col-md-12 col-sm-12'>".$username1." "."Избери Операция:</span>";
+	echo '<p><div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
   <li><a href="busy.php">Заети Места</a></li>
   <li><a href="read.php">Снимки</a></li>
-</ol></div>';
+</ol></p>';
 
 
-echo "<table border='1'>";
+echo "<center><table border='0' class='table table-hover'>";
 echo "<tr>
 	  	<td>Зона</td>
 	  	<td>Място</td>
@@ -48,12 +51,13 @@ echo "<tr>
 		echo '<tr><td>'.$row['zone_address'].'</td>';
 		echo '<td>'.$row['place_id'].'</td>';
 		echo '<td>'.$row['status_name'].'</td>';
-		echo '<td>'.'<a href="update.php?id='.$row['place_id'].'">Заеми</a>'.'</td></tr>';
+		echo '<td>'.'<a href="free_to_busy.php?id='.$row['place_id'].'">Заеми</a>'.'</td></tr>';
 		}
 
 	}
 $_SESSION['username']=$username1;
 $_SESSION['zone_id']=$zone_id;
 
-echo "</table>";
+
+echo "</table></center></div>";
 ?>

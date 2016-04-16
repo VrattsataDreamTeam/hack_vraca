@@ -44,10 +44,6 @@ if(isset($_POST['submit'])){
 }
 
 
- 
-                  	
-//date_default_timezone_set('Europe/Sofia');
-
 if(!empty($_GET)) {
 	$id_photo= $_GET['id'];}
 echo '</div>';

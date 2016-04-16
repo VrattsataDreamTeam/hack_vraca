@@ -3,7 +3,7 @@ body,html,div{
 	padding:0;
 }
 header,div,nav, table, tr, td{
-border: 2px solid;
+border: 0px solid;
 }
 h1{
 	text-align: center;
@@ -81,10 +81,14 @@ a:hover {
 }
 #worker_menu{
 	text-align: center;
+  display: inline-block;
+  border: 0px solid;
 }
 #greeting{
 	text-align: center;
 }
+<<<<<<< fa9b3df383dea0adee124134f2d84542c4553062
+=======
 .back-to-top {
  
 background: none;
@@ -159,3 +163,4 @@ background-color: #ff9000;
     line-height: 1.2;
   }
 }
+>>>>>>> stuff
