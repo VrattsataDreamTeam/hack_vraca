@@ -44,7 +44,7 @@ else{
 	echo '<div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php">Свободни Места</a></li>
   <li><a href="busy.php">Заети Места</a></li>
-  <li><a href="img.php">Снимки</a></li>
+  <li><a href="img.php">Снимки</a></li>";
 </ol></div>';
 	
 				

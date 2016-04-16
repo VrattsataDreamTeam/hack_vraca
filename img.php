@@ -1,12 +1,9 @@
-
 <?php
 //date_default_timezone_set('Europe/Sofia');
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
-
 if(!empty($_GET)) {
 	$id_photo= $_GET['id'];
 } 
-
 // echo '<pre>';
 // print_r($_FILES);
 // echo '</pre>';
@@ -62,9 +59,4 @@ if(!empty($_GET)) {
 									echo "Опитайте отново!";
 								}
 							}
-							
-						}
-						
-					
-						?>
-						
+			}
