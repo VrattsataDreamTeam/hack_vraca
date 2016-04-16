@@ -2,7 +2,8 @@
 <?php
 session_start();
 include('functions/header.php');
-$conn = mysqli_connect('localhost', 'root', '', 'bluezon_zones');
+$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
+mysqli_set_charset($conn, 'utf8');
 
 $worker_id=$_SESSION['worker_id'];
 $zone_id=$_SESSION['zone_id'];
