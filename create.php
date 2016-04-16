@@ -15,7 +15,12 @@ if(empty($_POST['submit'])){
 
 	$q 		= "SELECT * FROM zones WHERE date_deleted IS NULL";
 	$res 	= mysqli_query($conn, $q);
-	
+	echo '<div id="menu" class="header-menu fixed">
+                <div class="container-fluid">
+                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-12">
+                            <div class="navbar-header">
+                              
+                              <div class="nav-tabs">';
 	echo "<p>$username1 Избери Зона:</p>";
 	echo "<form action='free.php' method='get'>";
 	echo "<select name='zone_id'>";
@@ -37,7 +42,7 @@ if(empty($_POST['submit'])){
 	
     //echo "<input type='hidden' name='zone_id' value=".$row['zone_id'].">";
 	echo "<p><input type='submit' name='submit' value='продължи'></p>";
-	echo "</form>";
+	echo "</form></div></div></div></div>";
 }
 else{
    $_SESSION['zone_id']=$zone_id;

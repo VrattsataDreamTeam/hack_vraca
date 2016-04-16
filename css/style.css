@@ -76,6 +76,8 @@ a:hover {
 }
 #worker_menu{
 	text-align: center;
+  display: inline-block;
+  border: 0px solid;
 }
 #greeting{
 	text-align: center;
