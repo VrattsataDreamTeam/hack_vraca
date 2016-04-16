@@ -26,7 +26,7 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
             <div id="menu" class="header-menu fixed">
                 <div class="container-fluid">
 
-                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-2 col-lg-offset-5 col-lg-4">
+                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-2 ">
 
                         
 
