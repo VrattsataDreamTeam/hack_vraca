@@ -28,14 +28,22 @@ echo "<tr>
 	  	<td>Зона</td>
 	  	<td>Място</td>
 	  	<td>Заето</td>
+	  	<td>Начало</td>
+	  	<td>Край</td>
+	  	<td>Цена</td>
 	  	<td>Освобождаване</td>
+	  	<td>Талон</td>
 	  </tr>";
 	if (mysqli_num_rows($busy_place_result) > 0) {
 		while($row = mysqli_fetch_assoc($busy_place_result)){
 		echo '<tr><td>'.$row['zone_address'].'</td>';
 		echo '<td>'.$row['place_id'].'</td>';
 		echo '<td>'.$row['status_name'].'</td>';
-		echo '<td>'.'<a href="update.php?id='.$row['place_id'].'">Освободи</a>'.'</td></tr>';
+		echo '<td>'.$row['time_start'].'</td>';
+		echo '<td>'.$row['time_end'].'</td>';
+		echo '<td>'.$row['price'].'</td>';
+		echo '<td>'.'<a href="busy_to_free.php?id='.$row['place_id'].'">Освободи</a>'.'</td>';
+		echo '<td>'.'<a href="talon.php?id='.$row['place_id'].'">Талон</a>'.'</td></tr>';
 		}
 
 	}

@@ -3,6 +3,9 @@ session_start();
 include_once('functions/header.php');
 
 $zone_id=$_GET['zone_id'];
+
+
+
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
 $username1=$_SESSION['username'];
 $worker_id=$_SESSION['worker_id'];
@@ -47,12 +50,13 @@ echo "<tr>
 		echo '<tr><td>'.$row['zone_address'].'</td>';
 		echo '<td>'.$row['place_id'].'</td>';
 		echo '<td>'.$row['status_name'].'</td>';
-		echo '<td>'.'<a href="update.php?id='.$row['place_id'].'">Заеми</a>'.'</td></tr>';
+		echo '<td>'.'<a href="free_to_busy.php?id='.$row['place_id'].'">Заеми</a>'.'</td></tr>';
 		}
 
 	}
 $_SESSION['username']=$username1;
 $_SESSION['zone_id']=$zone_id;
+
 
 echo "</table>";
 ?>
