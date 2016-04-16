@@ -11,12 +11,14 @@ $read_query = "SELECT * FROM photos JOIN zones
 
 			 	WHERE  photos.date_deleted IS NULL AND photos.worker_id=$worker_id AND photos.date is not NULL";
 $read_result = mysqli_query($conn, $read_query);
-echo '<a href="free.php?zone_id='.$zone_id.'" class="btn btn-success">Назад </a>';
+echo "<div class='row'>";
+echo "<div class='col-md-2 col-md-offset-5 col-xs-10 col-xs-offset-1'>";
+echo '<p><a href="free.php?zone_id='.$zone_id.'" class="btn btn-primary btn-default btn-block">Назад </a></p></div></div>';
 echo '<div id="img" class="collapse">';
- echo '<form action="img.php" method="POST" enctype="multipart/form-data">
+ echo '<p><form action="img.php" method="POST" enctype="multipart/form-data">
 	<input type="file" name="file_img"/>
 	<input type="submit" name="submit" value="Качи"/>
-</form>';
+</form></p>';
 mysqli_set_charset($conn, 'utf8');
 
 date_default_timezone_set('Europe/Sofia');
@@ -43,6 +45,7 @@ if(isset($_POST['submit'])){
 if(!empty($_GET)) {
 	$id_photo= $_GET['id'];}
 echo '</div>';
+echo "<div class='row'>";
 echo "<div class='table-responsive'>";
 echo "<table class='table'>";
 echo '<tr>';
@@ -89,6 +92,6 @@ echo '<tr>';
 		}
 
 	}
-echo "</table>";
+echo "</table></div>";
 echo "</div>";
 ?>

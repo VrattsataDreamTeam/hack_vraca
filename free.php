@@ -43,14 +43,14 @@ echo "<center><table border='0' class='table table-hover'>";
 echo "<tr>
 	  	<td>Зона</td>
 	  	<td>Място</td>
-	  	<td>Свободни</td>
+	  	
 	  	<td>Заемане</td>
 	  </tr>";
 	if (mysqli_num_rows($busy_place_result) > 0) {
 		while($row = mysqli_fetch_assoc($busy_place_result)){
 		echo '<tr><td>'.$row['zone_address'].'</td>';
 		echo '<td>'.$row['place_id'].'</td>';
-		echo '<td>'.$row['status_name'].'</td>';
+		
 		echo '<td>'.'<a href="free_to_busy.php?id='.$row['place_id'].'">Заеми</a>'.'</td></tr>';
 		}
 
