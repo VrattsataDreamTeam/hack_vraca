@@ -15,6 +15,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 						WHERE `places`.`place_id`=$place_id";
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
 	$row = mysqli_fetch_assoc($busy_place_result);
+	
 ?>
 	<form action="talon.php" method="post">
 
