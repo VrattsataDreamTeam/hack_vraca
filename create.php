@@ -16,24 +16,25 @@ if(empty($_POST['submit'])){
 	$res 	= mysqli_query($conn, $q);
 	
 	echo "<p>Избери Зона:</p>";
-	echo "<form action='free.php' method='post'>";
+	echo "<form action='free.php' method='get'>";
 	echo "<select name='zone_id'>";
 	
 	if (mysqli_num_rows($res) > 0) {
 		while($row = mysqli_fetch_assoc($res)){ 
 			
+			
 			echo '<option value="'.$row['zone_id'].'"';
 			if($row['zone_address']==='--'){echo 'selected =--';}
 			echo '>'.$row['zone_address'].'</option>';
-			$zone_id=$row['zone_id'];
-			$_SESSION['zone_id']=$row['zone_id'];
+			//$zone_id=$row['zone_id'];
+			//$_SESSION['zone_id']=$row['zone_id'];
 		}
 	}
 	echo "</select>";
 
 	
 	
-
+    //echo "<input type='hidden' name='zone_id' value=".$row['zone_id'].">";
 	echo "<p><input type='submit' name='submit' value='продължи'></p>";
 	echo "</form>";
 }

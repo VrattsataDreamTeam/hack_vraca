@@ -2,10 +2,11 @@
 session_start();
 include_once('functions/header.php');
 
-$zone_id=$_SESSION['zone_id'];
+$zone_id=$_GET['zone_id'];
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
 $username1=$_SESSION['username'];
-echo $zone_id;
+
+//echo $zone_id;
 	$read_busy_place = "SELECT * FROM `places` 
 							LEFT JOIN `zones`
 								ON `places`.`zone_id`=`zones`.`zone_id` 
