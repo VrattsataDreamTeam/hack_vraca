@@ -70,8 +70,8 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
  		
  		echo "<div id='talon' class='bg-info col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1'>";		
 		echo "Синя зона ВРАЦА <br/>
-			$place_id е заето <br/>
-			за $duration <br/>
+			място  $place_id заето <br/>
+			 за $duration <br/>
 			от $time_start <br/>
 			до $end_time <br/>
 			цена за престой: $price <br/>
