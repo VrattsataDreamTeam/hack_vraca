@@ -25,48 +25,32 @@ if(!empty($_GET)) {
 	<script src="jquery-1.11.3.min.js"></script>
 </head>
 <body>
-	<form method="post" action="img.php" enctype="multipart/form-data">
-		<input type="hidden" name="photo_id" value="<?php  if (isset ($id_photo)){ echo $id_photo; }?>">
-		<label for="ph">изберете снимка</label>
-		<input type="file" name="photo" id="ph">
-		<input type="submit" name="submit" value="запиши" >
-	</form>
-	<?php
-	
-						if (isset($_POST['submit'])) {
-							$id_photo = $_POST['photo_id'];
-						
-							date_default_timezone_set('Europe/Sofia');
-							$today = date("j-F-Y, g:i a");
-		
-							if(!empty($_FILES))		{	
-								$file_name = $_FILES['photo']['name'];
-								$tmp_name = $_FILES['photo']['tmp_name'];
-								$file_size = $_FILES['photo']['size'];
-								$file_type = $_FILES['photo']['type'];
-								
-								$content = addslashes(file_get_contents($tmp_name));
-//insering picture into the
-								$q = "UPDATE `photos` 
-								SET `photo`='$content',
-									`name_photo`='$file_name',
-									`type_photo`='$file_type',
-									`size_photo`='$file_size',
-									`date`='$today'
-								WHERE `photo_id` = $id_photo";
-								if (mysqli_query($conn, $q)) {
-									echo "<p>Успешно записахте снимка</p>";
-									$q = "SELECT `photo` FROM `photos` WHERE photo_id = $id_photo";
-									$result = mysqli_query($conn, $q);
-									$row = mysqli_fetch_assoc($result);
-									$insert_query = "INSERT INTO photos(zone_id,worker_id)
-                                    VALUES ('$zone_id','$worker_id')";
-                                    $insert_result= mysqli_query($conn,$insert_query);
+<form action="img.php" method="POST" enctype="multipart/form-data">
+	<input type="file" name="file_img"/>
+	<input type="submit" name="submit" value="Upload"/>
+</form>
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'zones');
+mysqli_set_charset($conn, 'utf8');
 
-									echo "<p><a href='read.php'>Read DB</a></p>";
-									//echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['photo'] ).'"/>';
-								} else {
-									echo "Опитайте отново!";
-								}
-							}
-			}
+date_default_timezone_set('Europe/Sofia');
+$today = date("j-F-Y, g:i a");
+
+if(isset($_POST['submit'])){
+	$filetmp = $_FILES["file_img"]["tmp_name"];
+	$filename = $_FILES["file_img"]["name"];
+	$filetype = $_FILES["file_img"]["type"];
+	$filepath = "DB/" . $filename;
+	if(move_uploaded_file($filetmp, $filepath)){
+
+		$q = "INSERT INTO `photos`(`zone_id`, `worker_id`, `photo_dir`, `photo_name`, `photo_type`, `date`) 
+				VALUES ($zone_id, $worker_id, '$filepath', '$filename' ,'$filetype', '$today')";
+		if (mysqli_query($conn, $q)) {
+										echo "<p>Успешно записахте снимка</p>";
+									} else {
+										echo "Опитайте отново!";
+									}
+	}
+}
+?>
+</body>

@@ -4,6 +4,7 @@ include_once('functions/header.php');
 
 $zone_id=$_GET['zone_id'];
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
+mysqli_set_charset($conn, 'utf8');
 $username1=$_SESSION['username'];
 $worker_id=$_SESSION['worker_id'];
 
