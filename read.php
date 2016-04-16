@@ -3,11 +3,7 @@
 session_start();
 include('functions/header.php');
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
-// if (!$conn) {
-// 	die("Connection failed: " .mysqli_connect_error());
-// 	} else {
-// 	echo "Connected successfully !";
-// 	}
+
 $worker_id=$_SESSION['worker_id'];
 $zone_id=$_SESSION['zone_id'];
 $read_query = "SELECT * FROM photos JOIN zones
