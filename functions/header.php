@@ -36,7 +36,7 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
 
                                 <!--== Navigation Menu ==-->
                                 
-                                    <a href="functions/map.php"><span class='glyphicon glyphicon-map-marker'><p>карта</p></span></a></li>
+                                    <a href="map.php"><span class='glyphicon glyphicon-map-marker'><p>карта</p></span></a></li>
                                     
                                 
                             </div>   
