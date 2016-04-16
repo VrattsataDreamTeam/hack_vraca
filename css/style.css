@@ -1,9 +1,9 @@
 body,html,div{
 	margin: 0;
-	pading:0;
+	padding:0;
 }
-header,div,nav{
-border: 0px solid;
+header,div,nav, table, tr, td{
+border: 0px;
 }
 h1{
 	text-align: center;
@@ -66,13 +66,18 @@ a:hover {
     text-align: center;
   }
   div{
-  	border:;
+  	border: 0px solid;
   }
   .glyphicon {
     font-size: 20px;
 }
 .glyphicon.map-marker {
     font-size: 50px;
+}
+.table-responsive{
+  max-width: 80%;
+  margin-left: 10%;
+  text-align: center;
 }
 #worker_menu{
 	text-align: center;
@@ -82,3 +87,80 @@ a:hover {
 #greeting{
 	text-align: center;
 }
+<<<<<<< fa9b3df383dea0adee124134f2d84542c4553062
+=======
+.back-to-top {
+ 
+background: none;
+ 
+margin: 0;
+ 
+position: fixed;
+ 
+bottom: 0;
+ 
+right: 0;
+ 
+width: 70px;
+ 
+height: 70px;
+ 
+z-index: 100;
+ 
+display: none;
+ 
+text-decoration: none;
+ 
+color: #ffffff;
+ 
+background-color: #ff9000;
+ 
+}
+ 
+  
+ 
+.back-to-top i {
+ 
+  font-size: 60px;
+ 
+}
+#imgtd{
+  max-width: 30%;
+  min-height: 1%;
+  min-width: 30%;
+  max-height: 10%;
+  margin-left: 20%;
+}
+
+#img1{
+  margin-left: 25%;
+}
+
+#upload-pic { position: fixed; bottom: 0px; right: 0px; }
+
+#img {
+  position: fixed; bottom: 40px; right: 30px;
+  max-width: 50px;
+}
+#delete-btn {
+
+    white-space: normal;
+
+}
+@media (max-width: 768px) {
+  .btn-responsive {
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 1;
+    border-radius:3px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}
+>>>>>>> stuff

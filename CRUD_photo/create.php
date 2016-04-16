@@ -8,6 +8,7 @@ session_start();
 <?php
 $username1=$_SESSION['username'];
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
+mysqli_set_charset($conn, 'utf8');
 // if (!$conn) {
 // 	die("Connection failed: " .mysqli_connect_error());
 // 	} else {
