@@ -38,7 +38,7 @@ echo "<div id='greeting' clas='col-xs-12 col-md-12 col-sm-12'>".$username1." "."
   <li><a href="read.php">Снимки</a></li>
 </ol></p>';
 
-
+echo "<p><div class='table-responsive'>";
 echo "<center><table border='0' class='table table-hover'>";
 echo "<tr>
 	  	<td>Зона</td>
@@ -59,5 +59,5 @@ $_SESSION['username']=$username1;
 $_SESSION['zone_id']=$zone_id;
 
 
-echo "</table></center></div>";
+echo "</table></center></div></div>";
 ?>

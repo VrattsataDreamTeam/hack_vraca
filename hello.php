@@ -9,23 +9,40 @@ include_once('functions/header.php');
 <?php
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
 
+		
+			
+
 $read_query 	="SELECT * FROM zones 
 			 	WHERE date_deleted IS NULL ";
 
 $read_result = mysqli_query($conn, $read_query);
 
 	if (mysqli_num_rows($read_result) > 0) {
-	
-		while($row = mysqli_fetch_assoc($read_result)){
+
+		$q = "SELECT COUNT(*) num, `zone_id` FROM `places` WHERE `status_id`=1 GROUP BY `zone_id`";
+		$res = mysqli_query($conn, $q);
+			
+			
+			if (mysqli_num_rows($res) > 0) 
 		
+	
+
+		while($row = mysqli_fetch_assoc($read_result)){
+
+			$row1= mysqli_fetch_assoc($res);
+			//var_dump($row1);
+
+
         echo "<div class='content'>
 
 		<section id='main' class='main'>
 			<div class='col-sm-12 col-xs-12'>";
 		
-		echo '<a href="free_places.php?id='.$row['zone_address'].'"><button id="zona" class="btn btn-info" data-toggle="modal" data-target="#myModal">'.$row['zone_address'].'</button></a><br>';
+		echo '<a href="free_places.php?id='.$row['zone_address'].'><button id="zona" class="btn btn-info" data-toggle="modal" data-target="#myModal">'.$row['zone_address']."<p>Свободни места: ".$row1['num']."</p>".'</button></a><br>';
+		
 		echo "</div></section></div>";
-		}
+	}
+		
 }
 ?>
 <!--<body>
