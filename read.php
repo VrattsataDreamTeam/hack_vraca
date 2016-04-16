@@ -79,7 +79,7 @@ echo '<tr>';
 							echo '<h4 class="modal-title">Снимка</h4>';
 						echo '</div>';
 							echo '<div class="modal-body">';
-								echo '<p><img id="img2" src="'. $row['photo_dir'] . '" class="img-responsive"/></p>';
+								echo '<p><center><img id="img2" src="'. $row['photo_dir'] . '" class="img-responsive"/></center></p>';
 							echo '</div>';
 					echo '</div>';
 				echo '</div>';
