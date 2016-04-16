@@ -1,6 +1,6 @@
 <?php 
 include_once('functions/header.php');
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'root', '', 'bluezon_zones');
 
 if (isset($_GET['id'])) {
 	

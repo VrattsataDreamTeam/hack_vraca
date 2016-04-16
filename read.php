@@ -2,7 +2,7 @@
 <?php
 session_start();
 include('functions/header.php');
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'root', '', 'bluezon_zones');
 
 $worker_id=$_SESSION['worker_id'];
 $zone_id=$_SESSION['zone_id'];

@@ -7,7 +7,7 @@ include_once('functions/header.php');
 ?>
 
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'root', '', 'bluezon_zones');
 
 		
 			

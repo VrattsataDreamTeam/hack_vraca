@@ -5,7 +5,7 @@ session_start();
 <?php
 $username1=$_SESSION['username'];
 $worker_id=$_SESSION['worker_id'];
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'root', '', 'bluezon_zones');
 // if (!$conn) {
 // 	die("Connection failed: " .mysqli_connect_error());
 // 	} else {
