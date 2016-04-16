@@ -6,7 +6,7 @@
 	<title>Project</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive_style.css">
-		<!-- Latest compiled and minified CSS -->
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -25,11 +25,11 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
 	<header id="header">
             <div id="menu" class="header-menu fixed">
                 <div class="container-fluid">
-<<<<<<< HEAD
-                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-7 col-lg-offset-5 col-lg-7">
-=======
-                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-2">
->>>>>>> origin/master
+
+                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-2 col-lg-offset-5 col-lg-4">
+
+                        
+
                             <div class="navbar-header">
                             	<h1 class="bg-info">Синя зона инфо</h1>
                               <div class="nav-tabs">

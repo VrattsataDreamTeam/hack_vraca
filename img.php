@@ -1,11 +1,11 @@
 <?php
+header('location: read.php');
 session_start();
 $worker_id=$_SESSION['worker_id'];
 $zone_id=$_SESSION['zone_id'];
  $conn = mysqli_connect('localhost', 'root', '', 'zones');
  
                   	
-//date_default_timezone_set('Europe/Sofia');
 
 if(!empty($_GET)) {
 	$id_photo= $_GET['id'];

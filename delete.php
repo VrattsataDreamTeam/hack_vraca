@@ -10,7 +10,7 @@ $date 		= date('Y-m-d');
 
 $delete_query = 	"UPDATE photos 
 					SET date_deleted ='$date'
-					WHERE photo_id = $id_photo";
+					WHERE id = $id_photo";
 	
 $delete_result = mysqli_query($conn, $delete_query);
 

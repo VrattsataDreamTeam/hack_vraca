@@ -20,10 +20,10 @@ echo "<div id='greeting' class='col-xs-12 col-md-12  col-sm-12'>".$username1." "
 	echo '<p><div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
   <li><a href="busy.php">Заети Места</a></li>
-  <li><a href="img.php">Снимки</a></li>
+  <li><a href="read.php">Снимки</a></li>
 </ol></p></div>';
 echo "<p><div class='table-responsive'>";
-echo "<table border='0' class='table table-hover'>";
+echo "<center><table border='0' class='table table-hover'>";
 echo "<tr>
 	  	<td>Зона</td>
 	  	<td>Място</td>
@@ -48,5 +48,5 @@ echo "<tr>
 
 	}
 
-echo "</table></p></div></div>";
+echo "</table></p></center></div></div>";
 ?>
