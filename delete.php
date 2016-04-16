@@ -1,6 +1,6 @@
 <?php 
 include('functions/header.php');
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'root', '', 'bluezon_zones');
 // if (!$conn) {
 // 	die("Connection failed: " .mysqli_connect_error());
 // 	} else {

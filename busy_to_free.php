@@ -1,7 +1,7 @@
 <?php 
 session_start();
 $zone_id=$_SESSION['zone_id'];
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'root', '', 'bluezon_zones');
 
 if (isset($_GET['id'])) {
 

@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include_once('functions/header.php');
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'root', '', 'bluezon_zones');
 $zone_id=$_SESSION['zone_id'];
 
 $username1=$_SESSION['username'];
