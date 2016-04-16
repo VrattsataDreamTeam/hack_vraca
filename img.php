@@ -1,6 +1,12 @@
 <?php
+session_start();
+$worker_id=$_SESSION['worker_id'];
+$zone_id=$_SESSION['zone_id'];
+ $conn = mysqli_connect('localhost', 'root', '', 'zones');
+ 
+                  	
 //date_default_timezone_set('Europe/Sofia');
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+
 if(!empty($_GET)) {
 	$id_photo= $_GET['id'];
 } 
@@ -53,6 +59,10 @@ if(!empty($_GET)) {
 									$q = "SELECT `photo` FROM `photos` WHERE photo_id = $id_photo";
 									$result = mysqli_query($conn, $q);
 									$row = mysqli_fetch_assoc($result);
+									$insert_query = "INSERT INTO photos(zone_id,worker_id)
+                                    VALUES ('$zone_id','$worker_id')";
+                                    $insert_result= mysqli_query($conn,$insert_query);
+
 									echo "<p><a href='read.php'>Read DB</a></p>";
 									//echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['photo'] ).'"/>';
 								} else {

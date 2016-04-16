@@ -4,6 +4,7 @@ session_start();
 ?>
 <?php
 $username1=$_SESSION['username'];
+$worker_id=$_SESSION['worker_id'];
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
 // if (!$conn) {
 // 	die("Connection failed: " .mysqli_connect_error());
@@ -15,7 +16,7 @@ if(empty($_POST['submit'])){
 	$q 		= "SELECT * FROM zones WHERE date_deleted IS NULL";
 	$res 	= mysqli_query($conn, $q);
 	
-	echo "<p>Избери Зона:</p>";
+	echo "<p>$username1 Избери Зона:</p>";
 	echo "<form action='free.php' method='get'>";
 	echo "<select name='zone_id'>";
 	

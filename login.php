@@ -27,7 +27,7 @@ echo "</span></form>";
   $password1 = $_POST['password1'];
   //$password1 = md5($password1);
 
-$read_query =   "SELECT worker_name, password FROM workers 
+$read_query =   "SELECT worker_id,worker_name, password FROM workers 
                  WHERE date_deleted IS NULL";
 
 $read_result = mysqli_query($conn, $read_query);
@@ -38,10 +38,10 @@ $a = 0;
     
     while($row = mysqli_fetch_assoc($read_result)){ 
      
-      if ($row['worker_name'] == $username1 && $row['password'] == $password1) {
+      if ($row['worker_name'] == $username1 && $row['password'] == $password1 ) {
 
         $a = 1;
-         
+        $_SESSION['worker_id']=$row['worker_id'];
         echo "<div class='col-md-offset-1'><h2>Добре дошъл $username1!</a></h2></div>";
         
         echo "<a class='btn btn-default col-md-offset-6 col-xs-offset-4 col-sm-offset-4'  href='create.php' role='button'>Продължи</а>";
