@@ -18,6 +18,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 	$row = mysqli_fetch_assoc($busy_place_result);
 	
 ?>
+a 
 <div id='greeting' class='col-xs-12 col-md-12  col-sm-12'>, Избери Операция:</span>
 <p><div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
