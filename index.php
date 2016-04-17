@@ -5,7 +5,7 @@ include_once('functions/header_refresh.php');
 
 
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
-
+mysqli_set_charset($conn, 'utf8');
 		
 			
 
@@ -39,7 +39,7 @@ $read_result = mysqli_query($conn, $read_query);
 		}else{
 
 
-		//echo '<a href="free_places.php?id='.$row['zone_address'].'>
+		echo '<a href="info_free.php?id='.$row['zone_id'].'">';
 		echo '<div id="zona" class="bg-info col-sm-12 col-xs-12 col-md-4 col-md-offset-4">'.$row['zone_address']."<p >Свободни места:<font color='green'><span id='number'> ".$row1['num']."</span></font></p>".'</div></a><br>';
 		
 		echo "</div></section></div>";
@@ -48,6 +48,7 @@ $read_result = mysqli_query($conn, $read_query);
 	
 		
 }
+
 ?>
 <!--<body>
 	<div class="content">

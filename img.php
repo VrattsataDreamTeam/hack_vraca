@@ -30,7 +30,7 @@ if(!empty($_GET)) {
 	<input type="submit" name="submit" value="Upload"/>
 </form>
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'root', '', 'zoness');
 mysqli_set_charset($conn, 'utf8');
 
 date_default_timezone_set('Europe/Sofia');

@@ -160,14 +160,14 @@ background-color: #ff9000;
 
 @media (min-width: 769px) and (max-width: 992px) {
   .btn-responsive {
-    padding:4px 9px;
-    font-size:90%;
+    padding: 4px 9px;
+    font-size: 90%;
     line-height: 1.2;
   }
 }
 #talon{
   text-align: center;
-  font-size:140%;
+  font-size: 140%;
   margin-top: 7%;
 }
 #option_address{
@@ -196,6 +196,10 @@ background-color: #ff9000;
   margin-right: 0px !important;
 }
 #number{
+  font-weight: bold;
+}
+#time{
+  font-size: 170%;
   font-weight: bold;
 }
 >>>>>>> stuff
