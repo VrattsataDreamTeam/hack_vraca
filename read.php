@@ -48,22 +48,20 @@ if(!empty($_GET)) {
 echo '</div>';
 echo "<div class='row'>";
 echo "<div class='table-responsive'>";
-echo "<table class='table'>";
+echo "<table style='text-align:center;' class='table'>";
 echo '<tr>';
-		echo '<td>Служител</td>';
-		echo '<td>Синя зона</td>';
-		echo '</tr>';
-		
-		echo '</tr>';
+
 	if (mysqli_num_rows($read_result) > 0) {
 		while($row = mysqli_fetch_assoc($read_result)){ 
+			echo '<td width="50%">Служител</td>';
+			echo '<td>Синя зона</td>';
 			echo '<tr>';
 			echo '<td>'.$row['worker_name'].'</td>';
 			echo '<td>'.$row['zone_address'].'</td>';
 			echo '</tr>';
 			echo '<tr>';
-			echo '<td id="imgtd" colspan="2"><img id="img1" src="'. $row['photo_dir']. '" class="img-responsive" width="50%" height="20%" data-toggle="modal" data-target="#myModal'.$row['id'].'"/>
-			<a id="delete-btn" href="delete.php?id='.$row['id'].'" class="btn btn-danger btn-sm btn-responsive">Delete</a></td>';
+			echo '<td id="imgtd" colspan="2"><img id="img1" src="'. $row['photo_dir']. '" class="img-responsive" width="50%" height="20%" data-toggle="modal" data-target="#myModal'.$row['id'].'"/>';
+			echo '<div class="col-md-2 col-md-offset-5 col-xs-10 col-xs-offset-1"><a id="delete-btn" href="delete.php?id='.$row['id'].'" class="btn btn-danger btn-sm btn-responsive">Изтрий</a></td></div>';
 			echo '</tr>';
 			echo '<td colspan="2">Дата и час на качване</td>';
 			//echo '<td colspan="2">Регистрационен номер</td>';
@@ -71,7 +69,7 @@ echo '<tr>';
 			//echo '<td colspan="2">'.$row['Reg_number'].'</td>';
 			//echo '</tr>';
 			echo '<tr>';
-			echo '<td colspan="2">'.$row['date'].'</td>';
+			echo '<td id="last-td" colspan="2">'.$row['date'].'</td>';
 			echo '</tr>';
 			
 			echo '<tr>';
@@ -98,5 +96,8 @@ echo '<tr>';
 
 	}
 echo "</table></div>";
+echo "</div>";
+echo "<div class='col-sm-2 col-sm-offset-5 col-md-2 col-md-offset-5 col-xs-1 col-xs-offset-5 col-lg-2 col-lg-offset-5'>";
+echo "<a href='#top' class='back-to-top' style='display: inline;'><i class='fa fa-arrow-circle-up'></i></a>";
 echo "</div>";
 ?>

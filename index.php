@@ -1,17 +1,8 @@
 <?php
 include_once('functions/header.php');
-?>
 
-<?php
-include_once('functions/header.php');
-?>
-
-<?php
 $conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
 mysqli_set_charset($conn, 'utf8');
-
-		
-			
 
 $read_query 	="SELECT * FROM zones 
 			 	WHERE date_deleted IS NULL ";
