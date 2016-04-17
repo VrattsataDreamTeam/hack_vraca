@@ -26,12 +26,12 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
             <div id="menu" class="header-menu fixed">
                 <div class="container-fluid">
 
-                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-2 ">
+                        <nav role="navigation" class="col-sm-2 col-sm-offset-5 col-xs-12 col-md-2 col-md-offset-5">
 
                         
 
                             <div class="navbar-header">
-                            	<h1 class="bg-info">Синя зона инфо</h1>
+                            	<h1 id="top" class="bg-info">Синя зона инфо</h1>
                               <div class="nav-tabs">
 
                                 <!--== Navigation Menu ==-->
