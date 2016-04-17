@@ -2,10 +2,8 @@
 include_once('functions/header.php');
 session_start();
 $zone_id=$_SESSION['zone_id'];
-
-$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
-mysqli_set_charset($conn, 'utf8');
-
+$username1=$_SESSION['username'];
+$conn = mysqli_connect('localhost', 'root', '', 'zones');
 	if (isset($_GET['id'])) {
 	
 		$place_id = $_GET['id'];	
@@ -19,7 +17,15 @@ mysqli_set_charset($conn, 'utf8');
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
 	$row = mysqli_fetch_assoc($busy_place_result);
 	
-?><div id='talon' class="bg-info col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
+?>
+<div id='greeting' class='col-xs-12 col-md-12  col-sm-12'>, Избери Операция:</span>
+<p><div id="worker_menu"><ol class="breadcrumb">
+  <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
+  <li><a href="busy.php">Заети Места</a></li>
+  <li><a href="read.php">Снимки</a></li>
+  <li><a href="logout.php">Изход</a></li>
+</ol></p></div>
+<div id='talon' class="bg-info col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
 	<form action="talon.php" method="post" class="form-horizontal">
 
 		<input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
@@ -69,7 +75,14 @@ mysqli_set_charset($conn, 'utf8');
 							  WHERE `place_id`=$place_id ";
 		$update_result= mysqli_query($conn, $update_busy_place);
 	if ($update_result) {
- 		
+ 		echo "<div id='greeting' class='col-xs-12 col-md-12  col-sm-12'><b>".$username1."</b> ".", Избери Операция:</span>";
+	echo '<p><div id="worker_menu"><ol class="breadcrumb">
+  <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
+  <li><a href="busy.php">Заети Места</a></li>
+  <li><a href="read.php">Снимки</a></li>
+  <li><a href="logout.php">Изход</a></li>
+</ol></p></div>';
+
  		echo "<div id='talon' class='bg-info col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1'>";		
 		echo "Синя зона ВРАЦА <br/>
 			място  $place_id заето <br/>
@@ -78,15 +91,15 @@ mysqli_set_charset($conn, 'utf8');
 			до $end_time <br/>
 			цена за престой: $price <br/>
 		";
-		echo "Избери операция:";
-		echo "<form action='busy.php' method='get'>";
-		echo "<select name='zone_id'>";
+		// echo "Избери операция:";
+		// echo "<form action='busy.php' method='get'>";
+		// echo "<select name='zone_id'>";
 		
-		echo "<option value='$zone_id'><a href='busy.php'>Заети места</a></p></option>";
-		echo "<option value='$zone_id'><a href='free.php'>Свободни</a></p></option>";
-		echo "<div class='form-group'><input class='btn-primary btn-lg btn-block' type='submit' name='submit' value='избери'></div>";
+		// echo "<option value='$zone_id'><a href='busy.php'>Заети места</a></p></option>";
+		// echo "<option value='$zone_id'><a href='free.php'>Свободни</a></p></option>";
+		// echo "<div class='form-group'><input class='btn-primary btn-lg btn-block' type='submit' name='submit' value='избери'></div>";
 		
-		echo "</form></div>";
+		// echo "</form></div>";
 		
 	}else{
 		echo "Неуспешна промяна! Опитайте пак!";

@@ -3,9 +3,8 @@ header('location: read.php');
 session_start();
 $worker_id=$_SESSION['worker_id'];
 $zone_id=$_SESSION['zone_id'];
- $conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
-mysqli_set_charset($conn, 'utf8');
-
+ $conn = mysqli_connect('localhost', 'root', '', 'zones');
+ 
                   	
 
 if(!empty($_GET)) {
