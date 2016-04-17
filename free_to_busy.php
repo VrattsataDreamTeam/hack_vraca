@@ -1,5 +1,7 @@
 <?php 
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
+mysqli_set_charset($conn, 'utf8');
+
 
 if (isset($_GET['id'])) {
 	

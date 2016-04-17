@@ -1,8 +1,11 @@
-<?php 
+<?php
+include_once('functions/header.php');
 session_start();
 $zone_id=$_SESSION['zone_id'];
 
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
+mysqli_set_charset($conn, 'utf8');
+
 	if (isset($_GET['id'])) {
 	
 		$place_id = $_GET['id'];	
@@ -15,11 +18,12 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 						WHERE `places`.`place_id`=$place_id";
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
 	$row = mysqli_fetch_assoc($busy_place_result);
-?>
-	<form action="talon.php" method="post">
+	
+?><div id='talon' class="bg-info col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
+	<form action="talon.php" method="post" class="form-horizontal">
 
 		<input type="hidden" name="place_id" value="<?php echo $row['place_id']; ?>">
-		<?php echo $row['place_id'];  ?>
+		
 		<label>Цена престой:</label>
 		<select name="price">
 			<option value="0.40">0.40</option>
@@ -45,8 +49,8 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 		</select>
 
 
-<input type="submit" name="submit" value="Заето">
-</form>
+<div class="form-group"><input class="btn-primary btn-lg btn-block" type="submit" name="submit" value="Заето"></div>
+</form></div>
 <?php
 	}
 	if (isset($_POST['submit'])) {
@@ -65,11 +69,11 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 							  WHERE `place_id`=$place_id ";
 		$update_result= mysqli_query($conn, $update_busy_place);
 	if ($update_result) {
- 				
-		echo "
-			Синя зона ВРАЦА <br/>
-			$place_id е заето <br/>
-			за $duration <br/>
+ 		
+ 		echo "<div id='talon' class='bg-info col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1'>";		
+		echo "Синя зона ВРАЦА <br/>
+			място  $place_id заето <br/>
+			 за $duration <br/>
 			от $time_start <br/>
 			до $end_time <br/>
 			цена за престой: $price <br/>
@@ -80,9 +84,9 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 		
 		echo "<option value='$zone_id'><a href='busy.php'>Заети места</a></p></option>";
 		echo "<option value='$zone_id'><a href='free.php'>Свободни</a></p></option>";
-		echo "<input type='submit' name='submit' value='избери'>";
+		echo "<div class='form-group'><input class='btn-primary btn-lg btn-block' type='submit' name='submit' value='избери'></div>";
 		
-		echo "</form>";
+		echo "</form></div>";
 		
 	}else{
 		echo "Неуспешна промяна! Опитайте пак!";

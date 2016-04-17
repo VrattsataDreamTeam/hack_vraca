@@ -5,7 +5,9 @@ session_start();
 <?php
 $username1=$_SESSION['username'];
 $worker_id=$_SESSION['worker_id'];
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
+mysqli_set_charset($conn, 'utf8');
+
 // if (!$conn) {
 // 	die("Connection failed: " .mysqli_connect_error());
 // 	} else {
@@ -15,14 +17,16 @@ if(empty($_POST['submit'])){
 
 	$q 		= "SELECT * FROM zones WHERE date_deleted IS NULL";
 	$res 	= mysqli_query($conn, $q);
-	echo '<div id="menu" class="header-menu fixed">
+	echo '<div id="menu2" class="header-menu fixed">
                 <div class="container-fluid">
-                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-12">
+                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-4 col-md-4">
                             <div class="navbar-header">
                               
                               <div class="nav-tabs">';
-	echo "<p>$username1 Избери Зона:</p>";
+	echo "<p>$username1 , избери зона:</p>";
+	echo "<div id='option_address'>";
 	echo "<form action='free.php' method='get'>";
+	
 	echo "<select name='zone_id'>";
 	
 	if (mysqli_num_rows($res) > 0) {
@@ -41,8 +45,10 @@ if(empty($_POST['submit'])){
 	
 	
     //echo "<input type='hidden' name='zone_id' value=".$row['zone_id'].">";
-	echo "<p><input type='submit' name='submit' value='продължи'></p>";
+    echo "<div class='col-xs-10 col-xs-offset-1'>";
+	echo "<p><input class='btn-primary btn-block' type='submit' name='submit' value='продължи'></p></div>";
 	echo "</form></div></div></div></div>";
+	echo "</div>";
 }
 else{
    $_SESSION['zone_id']=$zone_id;

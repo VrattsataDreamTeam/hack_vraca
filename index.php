@@ -7,7 +7,8 @@ include_once('functions/header.php');
 ?>
 
 <?php
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
+mysqli_set_charset($conn, 'utf8');
 
 		
 			
@@ -38,7 +39,8 @@ $read_result = mysqli_query($conn, $read_query);
 		<section id='main' class='main'>
 			<div class='col-sm-12 col-xs-12'>";
 		
-		echo '<a href="free_places.php?id='.$row['zone_address'].'><button id="zona" class="btn btn-info" data-toggle="modal" data-target="#myModal">'.$row['zone_address']."<p>Свободни места: ".$row1['num']."</p>".'</button></a><br>';
+		//echo '<a href="free_places.php?id='.$row['zone_address'].'>
+		echo '<div id="zona" class="bg-info col-sm-12 col-xs-12 col-md-4 col-md-offset-4">'.$row['zone_address']."<p>Свободни места: ".$row1['num']."</p>".'</div></a><br>';
 		
 		echo "</div></section></div>";
 	}

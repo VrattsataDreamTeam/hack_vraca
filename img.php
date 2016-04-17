@@ -1,9 +1,11 @@
 <?php
+header('location: read.php');
 session_start();
 $worker_id=$_SESSION['worker_id'];
 $zone_id=$_SESSION['zone_id'];
- $conn = mysqli_connect('localhost', 'root', '', 'zones');
- 
+ $conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
+mysqli_set_charset($conn, 'utf8');
+
                   	
 
 if(!empty($_GET)) {

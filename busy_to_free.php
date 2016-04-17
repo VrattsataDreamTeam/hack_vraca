@@ -1,7 +1,9 @@
 <?php 
 session_start();
 $zone_id=$_SESSION['zone_id'];
-$conn = mysqli_connect('localhost', 'root', '', 'zones');
+$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
+mysqli_set_charset($conn, 'utf8');
+
 
 if (isset($_GET['id'])) {
 
@@ -9,7 +11,11 @@ if (isset($_GET['id'])) {
 
 														// Busy place go to free place 
 			$update_place = "UPDATE `places` 
-								SET `status_id`=1
+								SET `status_id`=1,
+								`price`=0,
+								`time_start`='00:00:00',
+								`time_end`='00:00:00'
+
 
 							WHERE `place_id`=$place_id";
 					
