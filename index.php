@@ -2,8 +2,6 @@
 include_once('functions/header_refresh.php');
 
 
-
-
 $conn = mysqli_connect('localhost', 'root', '', 'zones');
 
 		
