@@ -2,7 +2,7 @@
 <?php
 session_start();
 include('functions/header.php');
-$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
+$conn = mysqli_connect('localhost', 'root', '', 'zones');
 mysqli_set_charset($conn, 'utf8');
 
 $worker_id=$_SESSION['worker_id'];
@@ -97,7 +97,7 @@ echo '<tr>';
 	}
 echo "</table></div>";
 echo "</div>";
-echo "<div class='col-sm-2 col-sm-offset-5 col-md-2 col-md-offset-5 col-xs-1 col-xs-offset-5 col-lg-2 col-lg-offset-5'>";
+echo "<center><div class=''>";
 echo "<a href='#top' class='back-to-top' style='display: inline;'><i class='fa fa-arrow-circle-up'></i></a>";
-echo "</div>";
+echo "</div></center>";
 ?>

@@ -1,7 +1,6 @@
 <?php 
 include_once('functions/header.php');
-$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
-mysqli_set_charset($conn, 'utf8');
+$conn = mysqli_connect('localhost', 'root', '', 'zones');
 
 if (isset($_GET['id'])) {
 	

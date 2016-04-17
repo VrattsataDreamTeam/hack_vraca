@@ -6,9 +6,7 @@ $zone_id=$_GET['zone_id'];
 
 
 
-$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
-mysqli_set_charset($conn, 'utf8');
-
+$conn = mysqli_connect('localhost', 'root', '', 'zones');
 mysqli_set_charset($conn, 'utf8');
 $username1=$_SESSION['username'];
 $worker_id=$_SESSION['worker_id'];
@@ -33,11 +31,12 @@ $insert_result= mysqli_query($conn,$insert_query);
 						ORDER BY `places`.`place_id`";
 	$busy_place_result = mysqli_query($conn, $read_busy_place);
 
-echo "<div id='greeting' clas='col-xs-12 col-md-12 col-sm-12'>".$username1." ".", избери операция:</span>";
+echo "<div id='greeting' clas='col-xs-12 col-md-12 col-sm-12'><b>".$username1."</b> ".", избери операция:</span>";
 	echo '<p><div id="worker_menu"><ol class="breadcrumb">
   <li><a href="free.php?zone_id='.$zone_id.'">Свободни Места</a></li>
   <li><a href="busy.php">Заети Места</a></li>
   <li><a href="read.php">Снимки</a></li>
+  <li><a href="logout.php">Изход</a></li>
 </ol></p>';
 
 echo "<p><div class='table-responsive'>";
