@@ -31,7 +31,7 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
 
                         
 
-                            <div class="navbar-header">
+                            <div class="navbar-header col-sm-12 col-xs-12 col-md-offset- col-md-12">
                             	<h1 id='logo'class="bg-info">Синя зона инфо</h1>
                               <div class="nav-tabs">
 
