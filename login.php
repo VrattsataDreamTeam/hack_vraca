@@ -14,18 +14,15 @@ $conn = mysqli_connect('localhost', 'root', '', 'zones');
 //  }
 
 if(empty($_POST['username1']) && empty($_POST['password1']) || empty($_POST['submit'])){
-echo '<div id="menu" class="header-menu fixed">
-                <div class="container-fluid">
-                        <nav role="navigation" class="col-sm-12 col-xs-12 col-md-offset-5 col-md-12">
-                            <div class="navbar-header">
-                              
-                              <div class="nav-tabs">'; 
+
+                            echo "<center>";  
 echo "<span id='form'><form action='login.php' method='post'>";
 
 input_type('<p>','</p>','usr', 'text', 'username1', '', 'Потребителско име* ');
 input_type('<p>','</p>','ps', 'password', 'password1', '', 'Парола* ');
 input_type('<p>','</p>','sub', 'submit', 'submit', 'Вход', '');
-echo "</span></form></div></div></div></div>";
+echo "</center>";
+echo "</span></form>";
 
 }else{
   $username1 = $_POST['username1'];

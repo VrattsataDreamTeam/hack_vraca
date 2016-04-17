@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<title>Project</title>
+ <meta http-equiv="refresh" content="5">
+ <title>Project</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive_style.css">
 
@@ -46,8 +46,4 @@ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7
                         </nav>
                 </div>
             </div>
-            <?php
-
-           
-?>
-    </header>
+             </header>
