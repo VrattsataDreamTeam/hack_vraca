@@ -1,8 +1,13 @@
 <?php
-include_once('functions/header.php');
+include_once('functions/header_refresh.php');
 
-$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
-mysqli_set_charset($conn, 'utf8');
+
+
+
+$conn = mysqli_connect('localhost', 'root', '', 'zones');
+
+		
+			
 
 $read_query 	="SELECT * FROM zones 
 			 	WHERE date_deleted IS NULL ";
@@ -29,12 +34,18 @@ $read_result = mysqli_query($conn, $read_query);
 
 		<section id='main' class='main'>
 			<div class='col-sm-12 col-xs-12'>";
-		
+		if ($row1['num'] == 0) {
+			echo '<div id="zona" class="bg-info col-sm-12 col-xs-12 col-md-4 col-md-offset-4">'.$row['zone_address']."<p>Свободни места:<font color='red'> няма </font></p>".'</div></a><br>';
+		}else{
+
+
 		//echo '<a href="free_places.php?id='.$row['zone_address'].'>
-		echo '<div id="zona" class="bg-info col-sm-12 col-xs-12 col-md-4 col-md-offset-4">'.$row['zone_address']."<p>Свободни места: ".$row1['num']."</p>".'</div></a><br>';
+		echo '<div id="zona" class="bg-info col-sm-12 col-xs-12 col-md-4 col-md-offset-4">'.$row['zone_address']."<p >Свободни места:<font color='green'><span id='number'> ".$row1['num']."</span></font></p>".'</div></a><br>';
 		
 		echo "</div></section></div>";
 	}
+	}
+	
 		
 }
 ?>

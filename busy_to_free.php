@@ -1,9 +1,7 @@
 <?php 
 session_start();
 $zone_id=$_SESSION['zone_id'];
-$conn = mysqli_connect('localhost', 'bluezon_main', 'vratsahack5', 'bluezon_zones');
-mysqli_set_charset($conn, 'utf8');
-
+$conn = mysqli_connect('localhost', 'root', '', 'zones');
 
 if (isset($_GET['id'])) {
 
